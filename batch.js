@@ -37,18 +37,19 @@ export const options = {
 export default function () {
   const payload = JSON.stringify({
     
-        "name": "test211",
-        "duration": 2,
-        "coordinator": getRandomInt(1,5),
-        "organization": getRandomInt(1,5),
-        "source_of_fund": getRandomInt(1,5),
+        "name": generateName(),
+        "duration": getRandomInt(10,50),
+        "coordinator": getRandomInt(1,22),
+        "organization": getRandomInt(2,19),
+        "source_of_fund": getRandomInt(2,5),
         "collaboration": getRandomInt(1,5),
-        "training_course_schedule": 2,
+        "training-center":getRandomInt(1,9),
+        "training_course_schedule": 7,
         "initial_cost": 1000,
         "final_cost": 100000,
         "status":1
       
   });
   const headers = { 'Content-Type': 'application/json', 'Authorization': 'Bearer '+accesso };
-  http.post(url+'training-course/training-schedule/', payload, { headers });
+  http.post(url+'batch/', payload, { headers });
 }

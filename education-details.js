@@ -9,23 +9,22 @@ function generateName(){
     var name = name1[getRandomInt(0, name1.length + 1)];
     return name;
 }
-// function generateboard(){
-//     var name = ["Dhaka", "Chittagong", "Khulna", "Rajshahi", "Barisal",
-//     "Sylhet", "Rangpur", "Mymensingh", "Dhaka", "Chittagong"];
-//  var name = name[getRandomInt(0, name.length + 1)];
-//  return name;
-// }
-// function instit(){
-//     var name1 = ["Technical ", "Sessional ", "Laboratory ", "For Trainers", "Operation", "Office Management", "Medical"];
-//  var name = name1[getRandomInt(0, name1.length + 1)];
-//  return name;
-// }
+function generatetrainer(){
+var trainers = [876747152,4976892,774169529,20527581,611613978,925205513,5555,1859449,2880117,7318843,647386,3603755,3288251,3011942,486651,6642464,33454]
+var phn = trainers[getRandomInt(0, trainers.length + 1)];
+return phn;}
+
+function generateboard(){
+    var divisions = [    "Dhaka",    "Chittagong",    "Rajshahi",    "Khulna",    "Barisal",    "Sylhet",    "Rangpur",    "Mymensingh"]
+    var div = divisions[getRandomInt(0, divisions.length + 1)];
+    return div;
+}
 export const options = {
     scenarios: {
         my_scenario1: {
             executor: 'constant-arrival-rate',
-            duration: '3s', // total duration
-            preAllocatedVUs: 3, // to allocate runtime resources     preAll
+            duration: '10s', // total duration
+            preAllocatedVUs: 11, // to allocate runtime resources     preAll
             rate: 1, // number of constant iterations given `timeUnit`
             timeUnit: '1s',
         },
@@ -34,12 +33,12 @@ export const options = {
 export default function () {
     const payload = JSON.stringify({
         "degree": generateName(),
-        "board": "Dhaka",
+        "board": generateboard(),
         "grade_type": "A",
-        "institution": "oiuyt",
+        "institution": "University",
         "result": "nice",
         "passing_year": "2022",
-        "trainer": getRandomInt(1,2)
+        "trainer": generatetrainer()
     });
     const headers = { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + accesso };
     http.post(url + 'trainer/education-detail/', payload, { headers });

@@ -5,6 +5,7 @@ import accesso from './token.js';
 import url from './url.js';
 
 
+
 function capFirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }

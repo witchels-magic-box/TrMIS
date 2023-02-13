@@ -40,8 +40,8 @@ export default function () {
     
     
         "title": generateName(),
-        "training_course": getRandomInt(1,10),
-        "training_center": getRandomInt(1,10),
+        "training_course": getRandomInt(22,23),
+        "training_center": getRandomInt(80,90),
         "start_date": "2023-01-25",
         "end_date": "2023-03-25"
       

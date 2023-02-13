@@ -26,7 +26,8 @@ function generateDivision(){
 
 
 function generateName(){
-	var name1 = [ "Technicalu", "Sessionalu", "Laboratoryu", "uTrainee", "Puharmacy", "Mediucine", "Suurgeon", "Bioomedical", "Bioteuchnology", "Miucrobiology", "Forenusic", "Pathologyu"];
+	var name1 = [    "Introduction to Computer Science",    "Data Structures and Algorithms",    "Machine Learning",    "Deep Learning",    "Data Science and Big Data Analytics",    "Database Systems",    "Computer Networks",    "Operating Systems",    "Web Development",    "Software Engineering"];
+
 
 	var name = name1[getRandomInt(0, name1.length + 1)];
 	return name;
@@ -38,8 +39,8 @@ export const options = {
   scenarios: {
     my_scenario1: {
       executor: 'constant-arrival-rate',
-      duration: '7s', // total duration
-      preAllocatedVUs: 7, // to allocate runtime resources     preAll
+      duration: '10s', // total duration
+      preAllocatedVUs: 10, // to allocate runtime resources     preAll
 
       rate: 1, // number of constant iterations given `timeUnit`
       timeUnit: '1s',
@@ -51,10 +52,10 @@ export default function () {
   const payload = JSON.stringify({
     
         "title": generateName(),
-        "description": "stringkjkjkjkjk",
-        "code": Math.floor(Math.random() * 100),
+        "description": "Any name is important",
+        "code": Math.floor(Math.random() * 1000),
         "pass_mark": 50,
-        "objective": "stringnjjn",
+        "objective": "Find my name",
         "course_category": generateDivision(),
       
 
