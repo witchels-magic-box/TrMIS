@@ -11,7 +11,13 @@ function generateAddress(){
     return addre;
 
 }
+function generatecourseName(){
+	var name1 = [    "Anatomy",     "Physiology",     "Microbiology",     "Biochemistry",     "Genetics",     "Evolution",     "Ecology",     "Marine Biology",     "Botany",     "Zoology",     "Immunology",     "Cell Biology",     "Developmental Biology"];
 
+	var name = name1[getRandomInt(0, name1.length + 1)];
+	return name;
+
+}
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -51,16 +57,15 @@ export default function () {
 
         "phone": Math.floor(Math.random() * 100000000),
         "name": generateName(),
-        "emg_phone": Math.floor(Math.random() * 10000000),
         "nid": Math.floor(Math.random() * 10000000),
         "email": generateNamemail(),
         "gender": 1,
+        "dob": "2023-01-24",
         "marital_status": 1,
         "address": generateAddress(),
-        "dob": "2023-01-24",
-        "designation": getRandomInt(28, 29),
-        "grade": 1,
-        "organization": getRandomInt(10, 13),
+        "area_of_specialization": generatecourseName(),
+        "designation": getRandomInt(3, 5),
+        "organization": getRandomInt(15, 19),
         "division": getRandomInt(1, 8),
         "district": getRandomInt(1, 64),
         "sub_district": getRandomInt(1, 491),
